@@ -1,6 +1,6 @@
 package net.proselyte.basepatterns.structural.proxy;
 
-public class RealProject implements Project {
+public class RealProject {
     private String url;
 
     public RealProject(String url) {
@@ -10,10 +10,5 @@ public class RealProject implements Project {
 
     public void load() {
         System.out.println("Loading project from " + url + "...");
-    }
-
-    @Override
-    public void run() {
-        System.out.println("Running project " + url + "...");
     }
 }

@@ -13,11 +13,9 @@ public class DeveloperFactory {
             switch (specialty) {
                 case "java":
                     System.out.println("Hiring Java developer...");
-                    developer = new JavaDeveloper();
                     break;
                 case "c++":
                     System.out.println("Hiring C++ developer...");
-                    developer = new CppDeveloper();
             }
             developers.put(specialty, developer);
         }

@@ -6,12 +6,10 @@ public class JavaDeveloperRunner {
 
         JavaDeveloper javaDeveloper = new JavaDeveloper("Eugene Suleiamnov", skills);
 
-        Iterator iterator = javaDeveloper.getIterator();
+
         System.out.println("Developer: " + javaDeveloper.getName());
         System.out.println("Skills: ");
 
-        while (iterator.hasNext()) {
-            System.out.print(iterator.next().toString() + " ");
-        }
+
     }
 }

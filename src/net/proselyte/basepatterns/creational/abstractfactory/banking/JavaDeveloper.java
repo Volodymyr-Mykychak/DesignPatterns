@@ -2,10 +2,6 @@ package net.proselyte.basepatterns.creational.abstractfactory.banking;
 
 import net.proselyte.basepatterns.creational.abstractfactory.Developer;
 
-public class JavaDeveloper implements Developer{
+public class JavaDeveloper {
 
-    @Override
-    public void writeCode() {
-        System.out.println("Java developer writes Java code...");
-    }
 }

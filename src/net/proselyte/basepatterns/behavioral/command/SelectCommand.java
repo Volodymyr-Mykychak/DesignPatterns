@@ -7,8 +7,4 @@ public class SelectCommand implements Command {
         this.database = database;
     }
 
-    @Override
-    public void execute() {
-        database.select();
-    }
 }

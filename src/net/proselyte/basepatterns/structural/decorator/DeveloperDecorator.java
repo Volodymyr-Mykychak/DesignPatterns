@@ -1,6 +1,6 @@
 package net.proselyte.basepatterns.structural.decorator;
 
-public class DeveloperDecorator implements Developer{
+public class DeveloperDecorator {
 
     Developer developer;
 
@@ -8,8 +8,5 @@ public class DeveloperDecorator implements Developer{
         this.developer = developer;
     }
 
-    @Override
-    public String makeJob() {
-        return developer.makeJob();
-    }
+
 }

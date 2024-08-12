@@ -3,7 +3,7 @@ package net.proselyte.basepatterns.behavioral.mediator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SimpleTextChat implements Chat {
+public class SimpleTextChat  {
     User admin;
     List<User> users = new ArrayList<>();
 
@@ -15,13 +15,4 @@ public class SimpleTextChat implements Chat {
         this.users.add(user);
     }
 
-    @Override
-    public void sendMessage(String message, User user) {
-        for (User u : users) {
-            if (u != user) {
-                u.getMessage(message);
-            }
-        }
-        admin.getMessage(message);
-    }
 }

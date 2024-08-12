@@ -1,9 +1,5 @@
 package net.proselyte.basepatterns.behavioral.template;
 
-public class WelcomePage extends WebsiteTemplate{
+public class WelcomePage {
 
-    @Override
-    public void showPageContent() {
-        System.out.println("Welcome");
-    }
 }

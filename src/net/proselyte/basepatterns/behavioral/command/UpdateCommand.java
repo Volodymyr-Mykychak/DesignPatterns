@@ -7,8 +7,4 @@ public class UpdateCommand implements Command {
         this.database = database;
     }
 
-    @Override
-    public void execute() {
-        database.update();
-    }
 }

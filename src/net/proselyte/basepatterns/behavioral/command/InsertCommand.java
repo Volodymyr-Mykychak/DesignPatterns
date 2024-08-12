@@ -7,8 +7,4 @@ public class InsertCommand implements Command {
         this.database = database;
     }
 
-    @Override
-    public void execute() {
-        database.insert();
-    }
 }

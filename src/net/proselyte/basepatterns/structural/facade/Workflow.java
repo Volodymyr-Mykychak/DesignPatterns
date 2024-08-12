@@ -7,7 +7,5 @@ public class Workflow {
 
     public void solveProblems(){
         job.doJob();
-        bugTracker.startSprint();
-        developer.doJobBeforeDeadline(bugTracker);
     }
 }

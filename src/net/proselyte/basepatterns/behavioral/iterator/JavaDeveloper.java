@@ -1,6 +1,6 @@
 package net.proselyte.basepatterns.behavioral.iterator;
 
-public class JavaDeveloper implements Collection {
+public class JavaDeveloper {
     private String name;
     private String[] skills;
 
@@ -25,25 +25,4 @@ public class JavaDeveloper implements Collection {
         this.skills = skills;
     }
 
-    @Override
-    public Iterator getIterator() {
-        return new SkillIterator();
-    }
-
-    private class SkillIterator implements Iterator {
-        int index;
-
-        @Override
-        public boolean hasNext() {
-            if (index < skills.length) {
-                return true;
-            }
-            return false;
-        }
-
-        @Override
-        public Object next() {
-            return skills[index++];
-        }
-    }
 }

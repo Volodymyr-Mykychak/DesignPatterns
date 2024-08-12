@@ -1,6 +1,6 @@
 package net.proselyte.basepatterns.creational.prototype;
 
-public class Project implements Copyable{
+public class Project {
     private int id;
     private String projectName;
     private String sourceCode;
@@ -35,11 +35,6 @@ public class Project implements Copyable{
         this.sourceCode = sourceCode;
     }
 
-    @Override
-    public Object copy() {
-        Project copy = new Project(id, projectName, sourceCode);
-        return copy;
-    }
 
     @Override
     public String toString() {

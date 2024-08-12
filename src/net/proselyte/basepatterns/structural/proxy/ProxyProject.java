@@ -1,6 +1,6 @@
 package net.proselyte.basepatterns.structural.proxy;
 
-public class ProxyProject implements Project {
+public class ProxyProject {
     private String url;
     private RealProject realProject;
 
@@ -9,11 +9,4 @@ public class ProxyProject implements Project {
         this.url = url;
     }
 
-    @Override
-    public void run() {
-        if (realProject == null) {
-            realProject = new RealProject(url);
-        }
-        realProject.run();
-    }
 }

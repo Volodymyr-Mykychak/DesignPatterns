@@ -10,16 +10,11 @@ public class InterpreterRunner {
     }
 
     public static Expression getJavaExpression() {
-        Expression java = new TerminalExpression("Java");
-        Expression javaCore = new TerminalExpression("Java Core");
-
-        return new OrExpression(java, javaCore);
+        return null;
     }
 
     public static Expression getJavaEEExpression() {
-        Expression java = new TerminalExpression("Java");
-        Expression spring = new TerminalExpression("Spring");
 
-        return new AndExpression(java, spring);
+        return null;
     }
 }
