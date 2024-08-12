@@ -1,0 +1,30 @@
+@startuml
+class net.proselyte.basepatterns.structural.composite.Team {
+- List<Developer> developers
++ void addDeveloper(Developer)
++ void removeDeveloper(Developer)
++ void createProject()
+}
+
+
+interface net.proselyte.basepatterns.structural.composite.Developer {
++ void writeCode()
+}
+
+class net.proselyte.basepatterns.structural.composite.JavaDeveloper {
++ void writeCode()
+}
+
+class net.proselyte.basepatterns.structural.composite.CppDeveloper {
++ void writeCode()
+}
+
+class net.proselyte.basepatterns.structural.composite.Project {
++ {static} void main(String[])
+}
+
+
+
+net.proselyte.basepatterns.structural.composite.Developer <|.. net.proselyte.basepatterns.structural.composite.JavaDeveloper
+net.proselyte.basepatterns.structural.composite.Developer <|.. net.proselyte.basepatterns.structural.composite.CppDeveloper
+@enduml

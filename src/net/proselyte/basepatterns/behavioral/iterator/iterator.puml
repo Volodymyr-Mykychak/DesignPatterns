@@ -1,0 +1,39 @@
+@startuml
+interface net.proselyte.basepatterns.behavioral.iterator.Iterator {
++ boolean hasNext()
++ Object next()
+}
+
+interface net.proselyte.basepatterns.behavioral.iterator.Collection {
+~ Iterator getIterator()
+}
+
+class net.proselyte.basepatterns.behavioral.iterator.JavaDeveloper {
+- String name
+- String[] skills
++ <<Create>> JavaDeveloper(String,String[])
++ String getName()
++ void setName(String)
++ String[] getSkills()
++ void setSkills(String[])
++ Iterator getIterator()
+}
+
+
+class net.proselyte.basepatterns.behavioral.iterator.JavaDeveloper$SkillIterator {
+~ int index
++ boolean hasNext()
++ Object next()
+}
+
+
+class net.proselyte.basepatterns.behavioral.iterator.JavaDeveloperRunner {
++ {static} void main(String[])
+}
+
+
+
+net.proselyte.basepatterns.behavioral.iterator.Collection <|.. net.proselyte.basepatterns.behavioral.iterator.JavaDeveloper
+net.proselyte.basepatterns.behavioral.iterator.JavaDeveloper +.. net.proselyte.basepatterns.behavioral.iterator.JavaDeveloper$SkillIterator
+net.proselyte.basepatterns.behavioral.iterator.Iterator <|.. net.proselyte.basepatterns.behavioral.iterator.JavaDeveloper$SkillIterator
+@enduml

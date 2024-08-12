@@ -1,0 +1,42 @@
+@startuml
+class net.proselyte.basepatterns.behavioral.chain.SMSNotifier {
++ <<Create>> SMSNotifier(int)
++ void write(String)
+}
+
+class net.proselyte.basepatterns.behavioral.chain.BugTracker {
++ {static} void main(String[])
+}
+
+class net.proselyte.basepatterns.behavioral.chain.Priority {
++ {static} int ROUTINE
++ {static} int IMPORTANT
++ {static} int ASAP
+}
+
+abstract class net.proselyte.basepatterns.behavioral.chain.Notifier {
+- int priority
+- Notifier nextNotifier
++ <<Create>> Notifier(int)
++ void setNextNotifier(Notifier)
++ void notifyManager(String,int)
++ {abstract}void write(String)
+}
+
+
+class net.proselyte.basepatterns.behavioral.chain.SimpleReportNotifier {
++ <<Create>> SimpleReportNotifier(int)
++ void write(String)
+}
+
+class net.proselyte.basepatterns.behavioral.chain.EmailNotifier {
++ <<Create>> EmailNotifier(int)
++ void write(String)
+}
+
+
+
+net.proselyte.basepatterns.behavioral.chain.Notifier <|-- net.proselyte.basepatterns.behavioral.chain.SMSNotifier
+net.proselyte.basepatterns.behavioral.chain.Notifier <|-- net.proselyte.basepatterns.behavioral.chain.SimpleReportNotifier
+net.proselyte.basepatterns.behavioral.chain.Notifier <|-- net.proselyte.basepatterns.behavioral.chain.EmailNotifier
+@enduml

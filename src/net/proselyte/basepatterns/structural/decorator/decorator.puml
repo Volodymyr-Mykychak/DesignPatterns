@@ -1,0 +1,39 @@
+@startuml
+class net.proselyte.basepatterns.structural.decorator.DeveloperDecorator {
+~ Developer developer
++ <<Create>> DeveloperDecorator(Developer)
++ String makeJob()
+}
+
+
+class net.proselyte.basepatterns.structural.decorator.Task {
++ {static} void main(String[])
+}
+
+interface net.proselyte.basepatterns.structural.decorator.Developer {
++ String makeJob()
+}
+
+class net.proselyte.basepatterns.structural.decorator.JavaTeamLead {
++ <<Create>> JavaTeamLead(Developer)
++ String sendWeekReport()
++ String makeJob()
+}
+
+class net.proselyte.basepatterns.structural.decorator.JavaDeveloper {
++ String makeJob()
+}
+
+class net.proselyte.basepatterns.structural.decorator.SeniorJavaDeveloper {
++ <<Create>> SeniorJavaDeveloper(Developer)
++ String makeCodeReview()
++ String makeJob()
+}
+
+
+
+net.proselyte.basepatterns.structural.decorator.Developer <|.. net.proselyte.basepatterns.structural.decorator.DeveloperDecorator
+net.proselyte.basepatterns.structural.decorator.DeveloperDecorator <|-- net.proselyte.basepatterns.structural.decorator.JavaTeamLead
+net.proselyte.basepatterns.structural.decorator.Developer <|.. net.proselyte.basepatterns.structural.decorator.JavaDeveloper
+net.proselyte.basepatterns.structural.decorator.DeveloperDecorator <|-- net.proselyte.basepatterns.structural.decorator.SeniorJavaDeveloper
+@enduml

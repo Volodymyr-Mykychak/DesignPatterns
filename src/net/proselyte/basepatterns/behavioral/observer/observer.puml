@@ -1,0 +1,38 @@
+@startuml
+class net.proselyte.basepatterns.behavioral.observer.JavaDeveloperJobSite {
+~ List<String> vacancies
+~ List<Observer> subscribers
++ void addVacancy(String)
++ void removeVacancy(String)
++ void addObserver(Observer)
++ void removeObserver(Observer)
++ void notifyObservers()
+}
+
+
+interface net.proselyte.basepatterns.behavioral.observer.Observer {
++ void handleEvent(List<String>)
+}
+
+class net.proselyte.basepatterns.behavioral.observer.Subscriber {
+~ String name
++ <<Create>> Subscriber(String)
++ void handleEvent(List<String>)
+}
+
+
+class net.proselyte.basepatterns.behavioral.observer.JobSearch {
++ {static} void main(String[])
+}
+
+interface net.proselyte.basepatterns.behavioral.observer.Observed {
++ void addObserver(Observer)
++ void removeObserver(Observer)
++ void notifyObservers()
+}
+
+
+
+net.proselyte.basepatterns.behavioral.observer.Observed <|.. net.proselyte.basepatterns.behavioral.observer.JavaDeveloperJobSite
+net.proselyte.basepatterns.behavioral.observer.Observer <|.. net.proselyte.basepatterns.behavioral.observer.Subscriber
+@enduml

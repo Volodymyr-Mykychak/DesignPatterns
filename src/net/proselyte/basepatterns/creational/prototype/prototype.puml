@@ -1,0 +1,37 @@
+@startuml
+class net.proselyte.basepatterns.creational.prototype.ProjectFactory {
+~ Project project
++ <<Create>> ProjectFactory(Project)
++ void setProject(Project)
+~ Project cloneProject()
+}
+
+
+class net.proselyte.basepatterns.creational.prototype.VersionControlRunner {
++ {static} void main(String[])
+}
+
+interface net.proselyte.basepatterns.creational.prototype.Copyable {
+~ Object copy()
+}
+
+class net.proselyte.basepatterns.creational.prototype.Project {
+- int id
+- String projectName
+- String sourceCode
++ <<Create>> Project(int,String,String)
++ int getId()
++ void setId(int)
++ String getProjectName()
++ void setProjectName(String)
++ String getSourceCode()
++ void setSourceCode(String)
++ Object copy()
++ String toString()
+}
+
+
+
+
+net.proselyte.basepatterns.creational.prototype.Copyable <|.. net.proselyte.basepatterns.creational.prototype.Project
+@enduml

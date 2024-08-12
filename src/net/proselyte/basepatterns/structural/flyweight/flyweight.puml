@@ -1,0 +1,28 @@
+@startuml
+interface net.proselyte.basepatterns.structural.flyweight.Developer {
++ void writeCode()
+}
+
+class net.proselyte.basepatterns.structural.flyweight.CppDeveloper {
++ void writeCode()
+}
+
+class net.proselyte.basepatterns.structural.flyweight.JavaDeveloper {
++ void writeCode()
+}
+
+class net.proselyte.basepatterns.structural.flyweight.ProjectRunner {
++ {static} void main(String[])
+}
+
+class net.proselyte.basepatterns.structural.flyweight.DeveloperFactory {
+- {static} Map<String,Developer> developers
++ Developer getDeveloperBySpecialty(String)
+}
+
+
+
+
+net.proselyte.basepatterns.structural.flyweight.Developer <|.. net.proselyte.basepatterns.structural.flyweight.CppDeveloper
+net.proselyte.basepatterns.structural.flyweight.Developer <|.. net.proselyte.basepatterns.structural.flyweight.JavaDeveloper
+@enduml

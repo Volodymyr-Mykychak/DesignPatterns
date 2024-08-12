@@ -1,0 +1,55 @@
+@startuml
+class net.proselyte.basepatterns.behavioral.visitor.SeniorDeveloper {
++ void create(ProjectClass)
++ void create(Database)
++ void create(Test)
+}
+
+interface net.proselyte.basepatterns.behavioral.visitor.Developer {
++ void create(ProjectClass)
++ void create(Database)
++ void create(Test)
+}
+
+class net.proselyte.basepatterns.behavioral.visitor.JuniorDeveloper {
++ void create(ProjectClass)
++ void create(Database)
++ void create(Test)
+}
+
+class net.proselyte.basepatterns.behavioral.visitor.Project {
+~ ProjectElement[] projectElements
++ <<Create>> Project()
++ void beWritten(Developer)
+}
+
+
+class net.proselyte.basepatterns.behavioral.visitor.ProjectRunner {
++ {static} void main(String[])
+}
+
+class net.proselyte.basepatterns.behavioral.visitor.ProjectClass {
++ void beWritten(Developer)
+}
+
+class net.proselyte.basepatterns.behavioral.visitor.Test {
++ void beWritten(Developer)
+}
+
+class net.proselyte.basepatterns.behavioral.visitor.Database {
++ void beWritten(Developer)
+}
+
+interface net.proselyte.basepatterns.behavioral.visitor.ProjectElement {
++ void beWritten(Developer)
+}
+
+
+
+net.proselyte.basepatterns.behavioral.visitor.Developer <|.. net.proselyte.basepatterns.behavioral.visitor.SeniorDeveloper
+net.proselyte.basepatterns.behavioral.visitor.Developer <|.. net.proselyte.basepatterns.behavioral.visitor.JuniorDeveloper
+net.proselyte.basepatterns.behavioral.visitor.ProjectElement <|.. net.proselyte.basepatterns.behavioral.visitor.Project
+net.proselyte.basepatterns.behavioral.visitor.ProjectElement <|.. net.proselyte.basepatterns.behavioral.visitor.ProjectClass
+net.proselyte.basepatterns.behavioral.visitor.ProjectElement <|.. net.proselyte.basepatterns.behavioral.visitor.Test
+net.proselyte.basepatterns.behavioral.visitor.ProjectElement <|.. net.proselyte.basepatterns.behavioral.visitor.Database
+@enduml

@@ -1,0 +1,30 @@
+@startuml
+class net.proselyte.basepatterns.structural.proxy.ProxyProject {
+- String url
+- RealProject realProject
++ <<Create>> ProxyProject(String)
++ void run()
+}
+
+
+interface net.proselyte.basepatterns.structural.proxy.Project {
++ void run()
+}
+
+class net.proselyte.basepatterns.structural.proxy.ProjectRunner {
++ {static} void main(String[])
+}
+
+class net.proselyte.basepatterns.structural.proxy.RealProject {
+- String url
++ <<Create>> RealProject(String)
++ void load()
++ void run()
+}
+
+
+
+
+net.proselyte.basepatterns.structural.proxy.Project <|.. net.proselyte.basepatterns.structural.proxy.ProxyProject
+net.proselyte.basepatterns.structural.proxy.Project <|.. net.proselyte.basepatterns.structural.proxy.RealProject
+@enduml

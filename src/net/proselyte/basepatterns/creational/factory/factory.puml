@@ -1,0 +1,46 @@
+@startuml
+class net.proselyte.basepatterns.creational.factory.CppDeveloperFactory {
++ Developer createDeveloper()
+}
+
+class net.proselyte.basepatterns.creational.factory.Program {
++ {static} void main(String[])
+}
+
+class net.proselyte.basepatterns.creational.factory.PhpDeveloper {
++ void writeCode()
+}
+
+class net.proselyte.basepatterns.creational.factory.PhpDeveloperFactory {
++ Developer createDeveloper()
+}
+
+interface net.proselyte.basepatterns.creational.factory.DeveloperFactory {
+~ Developer createDeveloper()
+}
+
+class net.proselyte.basepatterns.creational.factory.CppDeveloper {
++ void writeCode()
+}
+
+interface net.proselyte.basepatterns.creational.factory.Developer {
+~ void writeCode()
+}
+
+class net.proselyte.basepatterns.creational.factory.JavaDeveloperFactory {
++ Developer createDeveloper()
+}
+
+class net.proselyte.basepatterns.creational.factory.JavaDeveloper {
++ void writeCode()
+}
+
+
+
+net.proselyte.basepatterns.creational.factory.DeveloperFactory <|.. net.proselyte.basepatterns.creational.factory.CppDeveloperFactory
+net.proselyte.basepatterns.creational.factory.Developer <|.. net.proselyte.basepatterns.creational.factory.PhpDeveloper
+net.proselyte.basepatterns.creational.factory.DeveloperFactory <|.. net.proselyte.basepatterns.creational.factory.PhpDeveloperFactory
+net.proselyte.basepatterns.creational.factory.Developer <|.. net.proselyte.basepatterns.creational.factory.CppDeveloper
+net.proselyte.basepatterns.creational.factory.DeveloperFactory <|.. net.proselyte.basepatterns.creational.factory.JavaDeveloperFactory
+net.proselyte.basepatterns.creational.factory.Developer <|.. net.proselyte.basepatterns.creational.factory.JavaDeveloper
+@enduml

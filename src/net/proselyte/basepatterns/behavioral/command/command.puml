@@ -1,0 +1,64 @@
+@startuml
+class net.proselyte.basepatterns.behavioral.command.Developer {
+~ Command insert
+~ Command update
+~ Command select
+~ Command delete
++ <<Create>> Developer(Command,Command,Command,Command)
++ void insertRecord()
++ void updateRecord()
++ void selectRecord()
++ void deleteRecord()
+}
+
+
+class net.proselyte.basepatterns.behavioral.command.InsertCommand {
+~ Database database
++ <<Create>> InsertCommand(Database)
++ void execute()
+}
+
+
+class net.proselyte.basepatterns.behavioral.command.Database {
++ void insert()
++ void update()
++ void select()
++ void delete()
+}
+
+class net.proselyte.basepatterns.behavioral.command.UpdateCommand {
+~ Database database
++ <<Create>> UpdateCommand(Database)
++ void execute()
+}
+
+
+interface net.proselyte.basepatterns.behavioral.command.Command {
++ void execute()
+}
+
+class net.proselyte.basepatterns.behavioral.command.DeleteCommand {
+~ Database database
++ <<Create>> DeleteCommand(Database)
++ void execute()
+}
+
+
+class net.proselyte.basepatterns.behavioral.command.SelectCommand {
+~ Database database
++ <<Create>> SelectCommand(Database)
++ void execute()
+}
+
+
+class net.proselyte.basepatterns.behavioral.command.DatabaseRunner {
++ {static} void main(String[])
+}
+
+
+
+net.proselyte.basepatterns.behavioral.command.Command <|.. net.proselyte.basepatterns.behavioral.command.InsertCommand
+net.proselyte.basepatterns.behavioral.command.Command <|.. net.proselyte.basepatterns.behavioral.command.UpdateCommand
+net.proselyte.basepatterns.behavioral.command.Command <|.. net.proselyte.basepatterns.behavioral.command.DeleteCommand
+net.proselyte.basepatterns.behavioral.command.Command <|.. net.proselyte.basepatterns.behavioral.command.SelectCommand
+@enduml

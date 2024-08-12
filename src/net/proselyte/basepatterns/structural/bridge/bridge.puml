@@ -1,0 +1,38 @@
+@startuml
+class net.proselyte.basepatterns.structural.bridge.JavaDeveloper {
++ void writeCode()
+}
+
+class net.proselyte.basepatterns.structural.bridge.BankSystem {
++ void developProgram()
+}
+
+class net.proselyte.basepatterns.structural.bridge.ProgramCreator {
++ {static} void main(String[])
+}
+
+class net.proselyte.basepatterns.structural.bridge.StockExchange {
++ void developProgram()
+}
+
+class net.proselyte.basepatterns.structural.bridge.CppDeveloper {
++ void writeCode()
+}
+
+abstract class net.proselyte.basepatterns.structural.bridge.Program {
+# Developer developer
++ {abstract}void developProgram()
+}
+
+
+interface net.proselyte.basepatterns.structural.bridge.Developer {
++ void writeCode()
+}
+
+
+
+net.proselyte.basepatterns.structural.bridge.Developer <|.. net.proselyte.basepatterns.structural.bridge.JavaDeveloper
+net.proselyte.basepatterns.structural.bridge.Program <|-- net.proselyte.basepatterns.structural.bridge.BankSystem
+net.proselyte.basepatterns.structural.bridge.Program <|-- net.proselyte.basepatterns.structural.bridge.StockExchange
+net.proselyte.basepatterns.structural.bridge.Developer <|.. net.proselyte.basepatterns.structural.bridge.CppDeveloper
+@enduml

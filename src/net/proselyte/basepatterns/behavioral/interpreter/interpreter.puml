@@ -1,0 +1,40 @@
+@startuml
+class net.proselyte.basepatterns.behavioral.interpreter.TerminalExpression {
+- String data
++ <<Create>> TerminalExpression(String)
++ boolean interpret(String)
+}
+
+
+interface net.proselyte.basepatterns.behavioral.interpreter.Expression {
++ boolean interpret(String)
+}
+
+class net.proselyte.basepatterns.behavioral.interpreter.InterpreterRunner {
++ {static} void main(String[])
++ {static} Expression getJavaExpression()
++ {static} Expression getJavaEEExpression()
+}
+
+class net.proselyte.basepatterns.behavioral.interpreter.AndExpression {
+- Expression expression1
+- Expression expression2
++ <<Create>> AndExpression(Expression,Expression)
++ boolean interpret(String)
+}
+
+
+class net.proselyte.basepatterns.behavioral.interpreter.OrExpression {
+- Expression expression1
+- Expression expression2
++ <<Create>> OrExpression(Expression,Expression)
++ boolean interpret(String)
+}
+
+
+
+
+net.proselyte.basepatterns.behavioral.interpreter.Expression <|.. net.proselyte.basepatterns.behavioral.interpreter.TerminalExpression
+net.proselyte.basepatterns.behavioral.interpreter.Expression <|.. net.proselyte.basepatterns.behavioral.interpreter.AndExpression
+net.proselyte.basepatterns.behavioral.interpreter.Expression <|.. net.proselyte.basepatterns.behavioral.interpreter.OrExpression
+@enduml

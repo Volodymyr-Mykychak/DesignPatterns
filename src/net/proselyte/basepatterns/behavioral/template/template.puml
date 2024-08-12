@@ -1,0 +1,23 @@
+@startuml
+abstract class net.proselyte.basepatterns.behavioral.template.WebsiteTemplate {
++ void showPage()
++ {abstract}void showPageContent()
+}
+
+class net.proselyte.basepatterns.behavioral.template.WelcomePage {
++ void showPageContent()
+}
+
+class net.proselyte.basepatterns.behavioral.template.NewsPage {
++ void showPageContent()
+}
+
+class net.proselyte.basepatterns.behavioral.template.WebsiteRunner {
++ {static} void main(String[])
+}
+
+
+
+net.proselyte.basepatterns.behavioral.template.WebsiteTemplate <|-- net.proselyte.basepatterns.behavioral.template.WelcomePage
+net.proselyte.basepatterns.behavioral.template.WebsiteTemplate <|-- net.proselyte.basepatterns.behavioral.template.NewsPage
+@enduml

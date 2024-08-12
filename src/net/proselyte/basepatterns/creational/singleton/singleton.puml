@@ -1,0 +1,16 @@
+@startuml
+class net.proselyte.basepatterns.creational.singleton.ProgramLogger {
+- {static} ProgramLogger programLogger
+- {static} String logFile
+- <<Create>> ProgramLogger()
++ {static} ProgramLogger getProgramLogger()
++ void addLogInfo(String)
++ void showLogFile()
+}
+
+
+class net.proselyte.basepatterns.creational.singleton.ProgramRunner {
++ {static} void main(String[])
+}
+
+@enduml

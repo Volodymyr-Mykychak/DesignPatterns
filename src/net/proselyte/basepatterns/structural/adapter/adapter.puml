@@ -1,0 +1,31 @@
+@startuml
+class net.proselyte.basepatterns.structural.adapter.JavaApplication {
++ void saveObject()
++ void updateObject()
++ void loadObject()
++ void deleteObject()
+}
+
+class net.proselyte.basepatterns.structural.adapter.DatabaseRunner {
++ {static} void main(String[])
+}
+
+class net.proselyte.basepatterns.structural.adapter.AdapterJavaToDatabase {
++ void insert()
++ void update()
++ void select()
++ void remove()
+}
+
+interface net.proselyte.basepatterns.structural.adapter.Database {
++ void insert()
++ void update()
++ void select()
++ void remove()
+}
+
+
+
+net.proselyte.basepatterns.structural.adapter.Database <|.. net.proselyte.basepatterns.structural.adapter.AdapterJavaToDatabase
+net.proselyte.basepatterns.structural.adapter.JavaApplication <|-- net.proselyte.basepatterns.structural.adapter.AdapterJavaToDatabase
+@enduml

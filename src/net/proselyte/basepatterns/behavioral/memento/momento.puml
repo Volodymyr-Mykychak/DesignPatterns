@@ -1,0 +1,32 @@
+@startuml
+class net.proselyte.basepatterns.behavioral.memento.Project {
+- String version
+- Date date
++ void setVersionAndDate(String)
++ Save save()
++ void load(Save)
++ String toString()
+}
+
+
+class net.proselyte.basepatterns.behavioral.memento.SaveProjectRunner {
++ {static} void main(String[])
+}
+
+class net.proselyte.basepatterns.behavioral.memento.GithubRepo {
+- Save save
++ Save getSave()
++ void setSave(Save)
+}
+
+
+class net.proselyte.basepatterns.behavioral.memento.Save {
+- String version
+- Date date
++ <<Create>> Save(String)
++ String getVersion()
++ Date getDate()
+}
+
+
+@enduml

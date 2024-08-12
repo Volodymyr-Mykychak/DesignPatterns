@@ -1,0 +1,55 @@
+@startuml
+class net.proselyte.basepatterns.creational.builder.VisitCardWebsiteBuilder {
+~ void buildName()
+~ void buildCms()
+~ void buildPrice()
+}
+
+class net.proselyte.basepatterns.creational.builder.Website {
+- String name
+- Cms cms
+- int price
++ void setName(String)
++ void setCms(Cms)
++ void setPrice(int)
++ String toString()
+}
+
+
+enum net.proselyte.basepatterns.creational.builder.Cms {
++  WORDPRESS
++  ALIFRESCO
+}
+
+class net.proselyte.basepatterns.creational.builder.EnterpriseWebsiteBuilder {
+~ void buildName()
+~ void buildCms()
+~ void buildPrice()
+}
+
+class net.proselyte.basepatterns.creational.builder.BuildWebsiteRunner {
++ {static} void main(String[])
+}
+
+abstract class net.proselyte.basepatterns.creational.builder.WebsiteBuilder {
+~ Website website
+~ void createWebsite()
+~ {abstract}void buildName()
+~ {abstract}void buildCms()
+~ {abstract}void buildPrice()
+~ Website getWebsite()
+}
+
+
+class net.proselyte.basepatterns.creational.builder.Director {
+~ WebsiteBuilder builder
++ void setBuilder(WebsiteBuilder)
+~ Website buildWebsite()
+}
+
+
+
+
+net.proselyte.basepatterns.creational.builder.WebsiteBuilder <|-- net.proselyte.basepatterns.creational.builder.VisitCardWebsiteBuilder
+net.proselyte.basepatterns.creational.builder.WebsiteBuilder <|-- net.proselyte.basepatterns.creational.builder.EnterpriseWebsiteBuilder
+@enduml

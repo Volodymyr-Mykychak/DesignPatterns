@@ -1,0 +1,39 @@
+@startuml
+class net.proselyte.basepatterns.behavioral.strategy.Reading {
++ void justDoIt()
+}
+
+class net.proselyte.basepatterns.behavioral.strategy.Developer {
+~ Activity activity
++ void setActivity(Activity)
++ void executeActivity()
+}
+
+
+class net.proselyte.basepatterns.behavioral.strategy.Coding {
++ void justDoIt()
+}
+
+class net.proselyte.basepatterns.behavioral.strategy.Training {
++ void justDoIt()
+}
+
+class net.proselyte.basepatterns.behavioral.strategy.DeveloperRunner {
++ {static} void main(String[])
+}
+
+interface net.proselyte.basepatterns.behavioral.strategy.Activity {
++ void justDoIt()
+}
+
+class net.proselyte.basepatterns.behavioral.strategy.Sleeping {
++ void justDoIt()
+}
+
+
+
+net.proselyte.basepatterns.behavioral.strategy.Activity <|.. net.proselyte.basepatterns.behavioral.strategy.Reading
+net.proselyte.basepatterns.behavioral.strategy.Activity <|.. net.proselyte.basepatterns.behavioral.strategy.Coding
+net.proselyte.basepatterns.behavioral.strategy.Activity <|.. net.proselyte.basepatterns.behavioral.strategy.Training
+net.proselyte.basepatterns.behavioral.strategy.Activity <|.. net.proselyte.basepatterns.behavioral.strategy.Sleeping
+@enduml

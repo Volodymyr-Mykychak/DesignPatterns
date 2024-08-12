@@ -1,0 +1,51 @@
+@startuml
+class net.proselyte.basepatterns.behavioral.mediator.SimpleChatRunner {
++ {static} void main(String[])
+}
+
+class net.proselyte.basepatterns.behavioral.mediator.SimpleTextChat {
+~ User admin
+~ List<User> users
++ void setAdmin(User)
++ void addUserToChat(User)
++ void sendMessage(String,User)
+}
+
+
+interface net.proselyte.basepatterns.behavioral.mediator.User {
++ void sendMessage(String)
++ void getMessage(String)
+}
+
+class net.proselyte.basepatterns.behavioral.mediator.Admin {
+~ Chat chat
+~ String name
++ <<Create>> Admin(Chat,String)
++ String getName()
++ void setName(String)
++ void sendMessage(String)
++ void getMessage(String)
+}
+
+
+class net.proselyte.basepatterns.behavioral.mediator.SimpleUser {
+~ Chat chat
+~ String name
++ <<Create>> SimpleUser(Chat,String)
++ String getName()
++ void setName(String)
++ void sendMessage(String)
++ void getMessage(String)
+}
+
+
+interface net.proselyte.basepatterns.behavioral.mediator.Chat {
++ void sendMessage(String,User)
+}
+
+
+
+net.proselyte.basepatterns.behavioral.mediator.Chat <|.. net.proselyte.basepatterns.behavioral.mediator.SimpleTextChat
+net.proselyte.basepatterns.behavioral.mediator.User <|.. net.proselyte.basepatterns.behavioral.mediator.Admin
+net.proselyte.basepatterns.behavioral.mediator.User <|.. net.proselyte.basepatterns.behavioral.mediator.SimpleUser
+@enduml

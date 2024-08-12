@@ -1,0 +1,30 @@
+@startuml
+class net.proselyte.basepatterns.structural.facade.BugTracker {
+- boolean activeSprint
++ boolean isActiveSprint()
++ void startSprint()
++ void finishSprint()
+}
+
+
+class net.proselyte.basepatterns.structural.facade.SprintRunner {
++ {static} void main(String[])
+}
+
+class net.proselyte.basepatterns.structural.facade.Workflow {
+~ Developer developer
+~ Job job
+~ BugTracker bugTracker
++ void solveProblems()
+}
+
+
+class net.proselyte.basepatterns.structural.facade.Developer {
++ void doJobBeforeDeadline(BugTracker)
+}
+
+class net.proselyte.basepatterns.structural.facade.Job {
++ void doJob()
+}
+
+@enduml
